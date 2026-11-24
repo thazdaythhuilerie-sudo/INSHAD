@@ -163,3 +163,21 @@
 @keyframes fade-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
 @utility animate-hero-zoom { animation: hero-zoom 2.4s cubic-bezier(.2,.7,.2,1) both; }
 @utility animate-fade-up { animation: fade-up 1.2s .4s ease-out both; }
+
+@utility bg-banner-fade {
+  background: linear-gradient(to bottom, var(--background), oklch(0 0 0 / 55%) 40%, var(--background));
+}
+@utility arch-frame {
+  border-radius: 999px 999px 0.25rem 0.25rem;
+  border: 1px solid var(--border);
+}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
+@keyframes marquee-half { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@utility animate-marquee { animation: marquee 30s linear infinite; }
+@utility animate-marquee-slow { animation: marquee-half 40s linear infinite; }
+@utility reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .9s ease-out, transform .9s ease-out;
+  &.is-visible { opacity: 1; transform: none; }
+}
